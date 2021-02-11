@@ -1,7 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import React from "react";
 import Episodes from "./Episodes";
-import { fetchShow as mockFetchShow } from "../api/fetchShow";
 
 //  * ========== Test 1 ========== * //
 test("Episodes renders", () => {
@@ -13,9 +12,6 @@ test("Episodes renders", () => {
 
 //  * ========== Test 2 ========== * //
 test("Renders elements to screen", async () => {
-	// const mockEpisodes = jest.fn();
-	// console.log("mockEpisodes =====> ", mockEpisodes.mock.results);
-
 	const mockEpisodeData = [
 		{
 			id: 1,
@@ -27,8 +23,6 @@ test("Renders elements to screen", async () => {
 			runtime: 130,
 		},
 	];
-
-	console.log("mockEpisodeData =====> ", mockEpisodeData);
 
 	render(<Episodes episodes={mockEpisodeData} />);
 
